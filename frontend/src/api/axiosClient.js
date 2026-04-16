@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const client = axios.create({
-  baseURL: '',           // Vite proxy handles /api → localhost:5000
+  baseURL: import.meta.env.VITE_API_URL || '',           // Use env var in production, relative fallback
   timeout: 12000,
   headers: { 'Content-Type': 'application/json' },
 });
